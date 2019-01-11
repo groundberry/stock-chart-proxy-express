@@ -4,8 +4,10 @@
   "description": "Express server to retireve stock data from IEX API.",
   "main": "server.js",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "request": "^2.88.0"
   },
   "devDependencies": {},
   "scripts": {
