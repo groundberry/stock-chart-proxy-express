@@ -1,0 +1,17 @@
+{
+  "name": "stock-chart-server",
+  "version": "1.0.0",
+  "description": "Express server to retireve stock data from IEX API.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
