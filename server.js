@@ -12,9 +12,9 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res, next) => {
-  const companyName = req.query["companyName"];
+  const symbol = req.query["symbol"];
   const range = req.query["range"];
-  const url = `https://api.iextrading.com/1.0/stock/market/batch?symbols=${companyName}&types=quote,news,chart&range=${range}&last=5`;
+  const url = `https://api.iextrading.com/1.0/stock/market/batch?symbols=${symbol}&types=quote,chart&range=${range}`;
 
   request(url, (err, resIEX, body) => {
     if (!err && resIEX.statusCode === 200) {
