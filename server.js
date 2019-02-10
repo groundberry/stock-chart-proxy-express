@@ -11,18 +11,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res, next) => {
+app.get("/", (req, res) => {
   const symbol = req.query["symbol"];
   const range = req.query["range"];
   const url = `https://api.iextrading.com/1.0/stock/market/batch?symbols=${symbol}&types=quote,chart&range=${range}`;
 
-  request(url, (err, resIEX, body) => {
-    if (!err && resIEX.statusCode === 200) {
-      res.send(body);
-    } else {
-      next(err);
-    }
-  });
+  request(url).pipe(res);
 });
 
 app.listen(port, () =>
